@@ -41,6 +41,10 @@ type SharedSettings struct {
 	CredsHelpers []string                   `yaml:"creds_helpers,omitempty"`
 	Experimental SharedExperimentalSettings `yaml:"experimental,omitempty"`
 	DockerCompat bool                       `yaml:"dockercompat,omitempty"`
+	// DockerCompatLenient downgrades an unsupported docker-style argument to a
+	// warning and drops it, instead of failing the command. It only has an
+	// effect when DockerCompat is enabled. See docs/arg-mapping.md.
+	DockerCompatLenient bool `yaml:"dockercompat_lenient,omitempty"`
 }
 
 // AutoVMStartEnabled returns whether automatic VM start is enabled.

@@ -47,24 +47,42 @@ func (nc *nerdctlCommand) run(cmdName string, args []string) error {
 		}
 	}
 
+	// A command with a translation matrix owns all of its arguments when
+	// dockercompat is enabled, so its legacy command handler is not run: it
+	// would convert paths a second time.
+	skipLegacyForTranslation := dockerCompat(nc.fc) && translationHandles(cmdName)
+
 	// First check if the command has a command handler
-	if hasCmdHandler {
+	if hasCmdHandler && !skipLegacyForTranslation {
 		err := cmdHandler(nc.systemDeps, nc.fc, &cmdName, &args, &inspectType)
 		if err != nil {
 			return err
 		}
 	}
 
-	for i, arg := range args {
-		// Check if individual argument (and possibly following value) requires manipulation-in-place handling
-		if hasArgHandler {
-			// Check if argument for the command needs handling, sometimes it can be --file=<filename>
-			b, _, _ := strings.Cut(arg, "=")
-			h, ok := aMap[b]
-			if ok {
-				err = h(nc.systemDeps, nc.fc, args, i)
-				if err != nil {
-					return err
+	// With dockercompat enabled, the commands covered by the translation matrix
+	// are translated here and the legacy in-place handlers are skipped, so a
+	// path is never converted twice.
+	translatedArgs, isTranslated, tErr := nc.translateArgs(cmdName, args)
+	if tErr != nil {
+		return tErr
+	}
+	if isTranslated {
+		args = translatedArgs
+	}
+
+	if !isTranslated {
+		for i, arg := range args {
+			// Check if individual argument (and possibly following value) requires manipulation-in-place handling
+			if hasArgHandler {
+				// Check if argument for the command needs handling, sometimes it can be --file=<filename>
+				b, _, _ := strings.Cut(arg, "=")
+				h, ok := aMap[b]
+				if ok {
+					err = h(nc.systemDeps, nc.fc, args, i)
+					if err != nil {
+						return err
+					}
 				}
 			}
 		}
@@ -93,6 +111,19 @@ func (nc *nerdctlCommand) run(cmdName string, args []string) error {
 	}
 
 	return nc.ncc.Create(cmdArgs...).Run()
+}
+
+// convertArgPath is the translator's host path mapping. On Linux there is no VM,
+// so the host path is already the runtime path.
+func convertArgPath(_ NerdctlCommandSystemDeps, path string) (string, error) {
+	return path, nil
+}
+
+// resolveHostGatewayAddress resolves docker's "host-gateway" pseudo address.
+// On Linux the host is the machine the runtime already runs on, so there is no
+// translation to do and the value is passed through unchanged.
+func resolveHostGatewayAddress(_ NerdctlCommandSystemDeps, _ string, _ flog.Logger, _ command.Creator) (string, error) {
+	return "host-gateway", nil
 }
 
 var osAliasMap = map[string]string{}

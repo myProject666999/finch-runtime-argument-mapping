@@ -1,0 +1,1225 @@
+{
+  "source": "github.com/containerd/nerdctl/v2@v2.3.5",
+  "runtime": "nerdctl",
+  "note": "Generated from the nerdctl v2.3.5 command sources; see pkg/argtranslate/matrix_test.go.",
+  "subcommands": {
+    "run": [
+      {
+        "name": "add-host",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "annotation",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "attach",
+        "short": "a",
+        "kind": "value"
+      },
+      {
+        "name": "blkio-weight",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "blkio-weight-device",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cap-add",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cap-drop",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cgroup-conf",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cgroup-parent",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cgroupns",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cidfile",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-certificate-identity",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-certificate-identity-regexp",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-certificate-oidc-issuer",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-certificate-oidc-issuer-regexp",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-key",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-period",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-quota",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-rt-period",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-rt-runtime",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-shares",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpus",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpuset-cpus",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpuset-mems",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "detach",
+        "short": "d",
+        "kind": "bool"
+      },
+      {
+        "name": "detach-keys",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device-read-bps",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device-read-iops",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device-write-bps",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device-write-iops",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "dns",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "dns-opt",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "dns-option",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "dns-search",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "domainname",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "entrypoint",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "env",
+        "short": "e",
+        "kind": "value"
+      },
+      {
+        "name": "env-file",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "gpus",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "group-add",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-cmd",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-interval",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-retries",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-start-period",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-timeout",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "help",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "hostname",
+        "short": "h",
+        "kind": "value"
+      },
+      {
+        "name": "init",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "init-binary",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "interactive",
+        "short": "i",
+        "kind": "bool"
+      },
+      {
+        "name": "ip",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "ip6",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "ipc",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "ipfs-address",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "isolation",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "kernel-memory",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "label",
+        "short": "l",
+        "kind": "value"
+      },
+      {
+        "name": "label-file",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "log-driver",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "log-opt",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "mac-address",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "memory",
+        "short": "m",
+        "kind": "value"
+      },
+      {
+        "name": "memory-reservation",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "memory-swap",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "memory-swappiness",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "mount",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "name",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "net",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "network",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "no-healthcheck",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "oom-kill-disable",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "oom-score-adj",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "pid",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "pidfile",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "pids-limit",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "platform",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "privileged",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "publish",
+        "short": "p",
+        "kind": "value"
+      },
+      {
+        "name": "pull",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "quiet",
+        "short": "q",
+        "kind": "bool"
+      },
+      {
+        "name": "rdt-class",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "read-only",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "restart",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "rm",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "rootfs",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "runtime",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "security-opt",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "shm-size",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "sig-proxy",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "stop-signal",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "stop-timeout",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "sysctl",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "systemd",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "tmpfs",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "tty",
+        "short": "t",
+        "kind": "bool"
+      },
+      {
+        "name": "ulimit",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "umask",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "user",
+        "short": "u",
+        "kind": "value"
+      },
+      {
+        "name": "userns",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "uts",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "verify",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "volume",
+        "short": "v",
+        "kind": "value"
+      },
+      {
+        "name": "volumes-from",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "workdir",
+        "short": "w",
+        "kind": "value"
+      }
+    ],
+    "create": [
+      {
+        "name": "add-host",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "annotation",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "blkio-weight",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "blkio-weight-device",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cap-add",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cap-drop",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cgroup-conf",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cgroup-parent",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cgroupns",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cidfile",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-certificate-identity",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-certificate-identity-regexp",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-certificate-oidc-issuer",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-certificate-oidc-issuer-regexp",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cosign-key",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-period",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-quota",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-rt-period",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-rt-runtime",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpu-shares",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpus",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpuset-cpus",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cpuset-mems",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "detach-keys",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device-read-bps",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device-read-iops",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device-write-bps",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "device-write-iops",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "dns",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "dns-opt",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "dns-option",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "dns-search",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "domainname",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "entrypoint",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "env",
+        "short": "e",
+        "kind": "value"
+      },
+      {
+        "name": "env-file",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "gpus",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "group-add",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-cmd",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-interval",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-retries",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-start-period",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "health-timeout",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "help",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "hostname",
+        "short": "h",
+        "kind": "value"
+      },
+      {
+        "name": "init",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "init-binary",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "interactive",
+        "short": "i",
+        "kind": "bool"
+      },
+      {
+        "name": "ip",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "ip6",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "ipc",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "ipfs-address",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "isolation",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "kernel-memory",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "label",
+        "short": "l",
+        "kind": "value"
+      },
+      {
+        "name": "label-file",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "log-driver",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "log-opt",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "mac-address",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "memory",
+        "short": "m",
+        "kind": "value"
+      },
+      {
+        "name": "memory-reservation",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "memory-swap",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "memory-swappiness",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "mount",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "name",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "net",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "network",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "no-healthcheck",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "oom-kill-disable",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "oom-score-adj",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "pid",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "pidfile",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "pids-limit",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "platform",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "privileged",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "publish",
+        "short": "p",
+        "kind": "value"
+      },
+      {
+        "name": "pull",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "quiet",
+        "short": "q",
+        "kind": "bool"
+      },
+      {
+        "name": "rdt-class",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "read-only",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "restart",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "rm",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "rootfs",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "runtime",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "security-opt",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "shm-size",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "sig-proxy",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "stop-signal",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "stop-timeout",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "sysctl",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "systemd",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "tmpfs",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "tty",
+        "short": "t",
+        "kind": "bool"
+      },
+      {
+        "name": "ulimit",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "umask",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "user",
+        "short": "u",
+        "kind": "value"
+      },
+      {
+        "name": "userns",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "uts",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "verify",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "volume",
+        "short": "v",
+        "kind": "value"
+      },
+      {
+        "name": "volumes-from",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "workdir",
+        "short": "w",
+        "kind": "value"
+      }
+    ],
+    "exec": [
+      {
+        "name": "detach",
+        "short": "d",
+        "kind": "bool"
+      },
+      {
+        "name": "env",
+        "short": "e",
+        "kind": "value"
+      },
+      {
+        "name": "env-file",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "interactive",
+        "short": "i",
+        "kind": "bool"
+      },
+      {
+        "name": "privileged",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "tty",
+        "short": "t",
+        "kind": "bool"
+      },
+      {
+        "name": "user",
+        "short": "u",
+        "kind": "value"
+      },
+      {
+        "name": "workdir",
+        "short": "w",
+        "kind": "value"
+      }
+    ],
+    "build": [
+      {
+        "name": "add-host",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "allow",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "attest",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "build-arg",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "build-context",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "buildkit-host",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cache-from",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "cache-to",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "file",
+        "short": "f",
+        "kind": "value"
+      },
+      {
+        "name": "iidfile",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "label",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "network",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "no-cache",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "output",
+        "short": "o",
+        "kind": "value"
+      },
+      {
+        "name": "platform",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "progress",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "provenance",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "pull",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "quiet",
+        "short": "q",
+        "kind": "bool"
+      },
+      {
+        "name": "rm",
+        "short": "",
+        "kind": "bool"
+      },
+      {
+        "name": "sbom",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "secret",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "source-policy-file",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "ssh",
+        "short": "",
+        "kind": "value"
+      },
+      {
+        "name": "tag",
+        "short": "t",
+        "kind": "value"
+      },
+      {
+        "name": "target",
+        "short": "",
+        "kind": "value"
+      }
+    ]
+  }
+}

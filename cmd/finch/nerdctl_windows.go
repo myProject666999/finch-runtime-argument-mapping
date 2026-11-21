@@ -69,6 +69,18 @@ func (nc *nerdctlCommand) GetCmdArgs() []string {
 	return []string{"shell", "--workdir", wslPath, limaInstanceName, "sudo", "-E"}
 }
 
+// convertArgPath is the translator's host path mapping. It reuses the same
+// conversion the legacy per-argument handlers use, so a path is mapped the same
+// way whichever layer handles it, and only one layer ever does.
+func convertArgPath(systemDeps NerdctlCommandSystemDeps, path string) (string, error) {
+	return convertToWSLPath(systemDeps, path)
+}
+
+// resolveHostGatewayAddress resolves docker's "host-gateway" pseudo address.
+func resolveHostGatewayAddress(_ NerdctlCommandSystemDeps, host string, logger flog.Logger, ecc command.Creator) (string, error) {
+	return resolveIP(host+":host-gateway", logger, ecc)
+}
+
 func convertToWSLPath(systemDeps NerdctlCommandSystemDeps, winPath string) (string, error) {
 	path, err := systemDeps.FilePathAbs(filepath.Clean(winPath))
 	if err != nil {

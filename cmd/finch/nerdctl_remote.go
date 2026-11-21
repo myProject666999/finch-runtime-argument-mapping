@@ -82,16 +82,36 @@ func (nc *nerdctlCommand) run(cmdName string, args []string) error {
 		}
 	}
 
+	// A command with a translation matrix owns all of its arguments when
+	// dockercompat is enabled, so its legacy command handler is not run: the
+	// handler would convert paths a second time. Handlers for other commands
+	// (buildx, inspect) still run first, and may rewrite cmdName into a
+	// translated one.
+	skipLegacyForTranslation := dockerCompat(nc.fc) && translationHandles(cmdName)
+
 	// First check if the command has command handler
-	if hasCmdHandler {
+	if hasCmdHandler && !skipLegacyForTranslation {
 		err := cmdHandler(nc.systemDeps, nc.fc, &cmdName, &args, &inspectType)
 		if err != nil {
 			return err
 		}
 	}
 
-	switch cmdName {
-	case "container run", "exec", "compose":
+	// With dockercompat enabled, the commands covered by the translation matrix
+	// are translated in one place afterwards, so the legacy parsing below is
+	// skipped for them. This keeps a single source of truth for what a flag
+	// means and makes sure a path is never converted twice.
+	translatedArgs, isTranslated, tErr := nc.translateArgs(cmdName, args)
+	if tErr != nil {
+		return tErr
+	}
+
+	switch {
+	case isTranslated:
+		// The translation matrix produced the runtime arguments already.
+		nerdctlArgs = translatedArgs
+
+	case cmdName == "container run" || cmdName == "exec" || cmdName == "compose":
 		// check if an option flag is present; immediately following the command
 		switch {
 		case len(args) > 1 && args[0] == "run" && strings.HasPrefix(args[1], "-"):

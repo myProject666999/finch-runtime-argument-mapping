@@ -20,6 +20,18 @@ func convertToWSLPath(_ NerdctlCommandSystemDeps, _ string) (string, error) {
 	return "", nil
 }
 
+// convertArgPath is the translator's host path mapping. macOS mounts the host
+// home directory into the VM at the same path, so no conversion is needed.
+func convertArgPath(_ NerdctlCommandSystemDeps, path string) (string, error) {
+	return path, nil
+}
+
+// resolveHostGatewayAddress resolves docker's "host-gateway" pseudo address to
+// an address reachable from containers.
+func resolveHostGatewayAddress(_ NerdctlCommandSystemDeps, host string, logger flog.Logger, ecc command.Creator) (string, error) {
+	return resolveIP(host+":host-gateway", logger, ecc)
+}
+
 var osAliasMap = map[string]string{}
 
 var osArgHandlerMap = map[string]map[string]argHandler{}

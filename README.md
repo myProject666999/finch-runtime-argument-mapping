@@ -209,7 +209,12 @@ rosetta: false
 
 # dockercompat: a configuration parameter to activate finch functionality to accept Docker-like commands and arguments.
 # For running DevContainers on Finch, this functionality will convert Docker-like arguments into compatible nerdctl commands and arguments.
+# See docs/arg-mapping.md for the per-argument translation matrix.
 dockercompat: true
+
+# dockercompat_lenient: when dockercompat is enabled, drop an unsupported docker-style
+# argument with a warning instead of failing the command. Off by default; see docs/arg-mapping.md.
+# dockercompat_lenient: true
 
 # experimental: enable experimental features (optional)
 #
@@ -257,7 +262,12 @@ vmType: "wsl2"
 
 # dockercompat: a configuration parameter to activate finch functionality to accept Docker-like commands and arguments.
 # For running DevContainers on Finch, this functionality will convert Docker-like arguments into compatible nerdctl commands and arguments.
+# See docs/arg-mapping.md for the per-argument translation matrix.
 dockercompat: true
+
+# dockercompat_lenient: when dockercompat is enabled, drop an unsupported docker-style
+# argument with a warning instead of failing the command. Off by default; see docs/arg-mapping.md.
+# dockercompat_lenient: true
 
 # experimental: experimental features to enable (optional)
 #

@@ -37,6 +37,30 @@ func platformLoadTests(t *testing.T) []loadTestCase {
 			wantErr: nil,
 		},
 		{
+			name: "dockercompat options are read",
+			path: "/config.yaml",
+			mockSvc: func(
+				fs afero.Fs,
+				_ *mocks.Logger,
+				_ *mocks.LoadSystemDeps,
+				_ *mocks.Memory,
+				_ *mocks.CommandCreator,
+				_ *gomock.Controller,
+			) {
+				data := `dockercompat: true
+dockercompat_lenient: true
+`
+				require.NoError(t, afero.WriteFile(fs, "/config.yaml", []byte(data), 0o600))
+			},
+			want: &Finch{
+				SharedSettings: SharedSettings{
+					DockerCompat:        true,
+					DockerCompatLenient: true,
+				},
+			},
+			wantErr: nil,
+		},
+		{
 			name: "config file exists, but is empty",
 			path: "/config.yaml",
 			mockSvc: func(
